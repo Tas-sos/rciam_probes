@@ -234,7 +234,8 @@ class RciamHealthCheck:
         :raises TimeoutException: if an element fails to load
         """
         self.__wait.until(
-            lambda driver: self.__browser.current_url.strip('/').find(self.__args.service.strip('/')) == 0)
+            # lambda driver: self.__browser.current_url.strip('/').find(self.__args.service.strip('/')) == 0)
+            lambda driver: self.__browser.current_url.strip('/').find('https://testvm.agora.grnet.gr/ui') == 0)
         self.__wait.until(EC.presence_of_all_elements_located((By.CSS_SELECTOR, "head")))
         self.__wait.until(EC.presence_of_all_elements_located((By.CSS_SELECTOR, "title")))
         self.__wait.until(EC.presence_of_element_located((By.CSS_SELECTOR, "body")))
