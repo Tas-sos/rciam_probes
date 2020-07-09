@@ -1,5 +1,8 @@
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
+import sys
+print('Python %s on %s' % (sys.version, sys.platform))
+sys.path.extend(['/home/tas-sos/workspace/webSites/rciam_probes_ioigoume'])
 from modules.checkhealth import RciamHealthCheck
 
 check = RciamHealthCheck()
